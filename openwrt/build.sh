@@ -103,7 +103,7 @@ elif [ "$1" = "rc2" ]; then
 fi
 
 # lan
-[ -n "$LAN" ] && export LAN=$LAN || export LAN=10.0.0.1
+[ -n "$LAN" ] && export LAN=$LAN || export LAN=172.18.88.1
 
 # platform
 [ "$2" = "armv8" ] && export platform="armv8" toolchain_arch="aarch64_generic"
@@ -356,7 +356,7 @@ echo -e "CONFIG_GCC_USE_VERSION_${gcc_version}=y\n" >> .config
 [ "$NO_KMOD" = "y" ] && sed -i '/CONFIG_ALL_KMODS=y/d; /CONFIG_ALL_NONSHARED=y/d' .config
 
 # build wwan pkgs for openwrt_core
-[ "$OPENWRT_CORE" = "y" ] && curl -s $mirror/openwrt/generic/config-wwan >> .config
+# [ "$OPENWRT_CORE" = "y" ] && curl -s $mirror/openwrt/generic/config-wwan >> .config
 
 # ccache
 if [ "$USE_GCC15" = "y" ] && [ "$ENABLE_CCACHE" = "y" ]; then
