@@ -285,7 +285,7 @@ if [ "$MINIMAL_BUILD" = "y" ]; then
     [ "$platform" != "bcm53xx" ] && curl -s $mirror/openwrt/24-config-minimal-common >> .config
     echo 'VERSION_TYPE="minimal"' >> package/base-files/files/usr/lib/os-release
 else
-    [ "$platform" != "bcm53xx" ] && curl -s $mirror/openwrt/24-config-common >> .config
+    [ "$platform" != "bcm53xx" ] && curl -s https://github.com/hanjinbao/build/openwrt/24-config-common >> .config
     [ "$platform" = "armv8" ] && sed -i '/DOCKER/Id' .config
 fi
 
