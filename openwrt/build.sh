@@ -37,11 +37,11 @@ ip_info=`curl -sk https://ip.cooluc.com`;
 
 # script url
 if [ "$isCN" = "CN" ]; then
-    export mirror=https://github.com/hanjinbao/build
-    # export mirror=https://init.cooluc.com
+    # export mirror=https://github.com/hanjinbao/build
+    export mirror=https://init.cooluc.com
 else
-    export mirror=https://github.com/hanjinbao/build
-    # export mirror=https://init2.cooluc.com
+    # export mirror=https://github.com/hanjinbao/build
+    export mirror=https://init2.cooluc.com
 fi
 
 # github actions - caddy server
